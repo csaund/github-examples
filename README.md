@@ -24,6 +24,8 @@ TL;DR: github terms cheatsheet
 | Clone | Copy a repository to your machine. Now you can edit the remote copy. | “I made the repo, you can clone it and start working now.” |
 | Fork | Make a copy of a repository, without a link to the original (cannot edit the original copy) |“I forked his website template to make my personal site.” |
 | Tag | Specially marked commit | "I tagged this version at 1.0.4" |
+| Revert | Undo a merge | "Oops those changes messed up the analysis. Let me revert that commit" |
+
 
 ## Comands
 | Command | Description |
