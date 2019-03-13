@@ -16,16 +16,23 @@ TL;DR: github terms cheatsheet
 | Pull | Incorporate good draft changes into another draft | "Yep I see them, I'll pull them now" |
 | Merge Conflict | Slightly more advanced incorporate good draft changes into my draft | "I had to resolve a merge conflict before I pushed those changes" |
 | Checkout | Go back to earlier draft | "I got lost in my changes so I checked out an old commit" |
-| Ddd |	Include / “pay attention to this” | "I forgot to add those files to the changes" |
+| Add |	Include / “pay attention to this” | "I forgot to add those files to the changes" |
 | Local |	The respository version on your computer | "I don't have that in my local copy" | 
 | Remote | The respository version on the network | "Those changes are on the remote copy" |
 | Pull Request | Formally request a review changes before merging to a branch.| “I submitted a pull request to the master branch.” |
 | README | Instructions for the repository. Basically, how to interpret everything that you’ve organized (i.e. how to run analysis code) | “The arguments for the program are defined in the README.” |
 | Clone | Copy a repository to your machine. Now you can edit the remote copy. | “I made the repo, you can clone it and start working now.” |
 | Fork | Make a copy of a repository, without a link to the original (cannot edit the original copy) |“I forked his website template to make my personal site.” |
+| Tag | Specially marked commit | "I tagged this version at 1.0.4" |
 
 ## Comands
 | Command | Description |
 | --- | --- |
 | git status | List all new or modified files |
 | git diff | Show file differences that haven't been staged |
+
+
+### TODOs
+* Add to terminology
+* Show git graph in ppt
+* Talk about checking out a branch
