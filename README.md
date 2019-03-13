@@ -15,7 +15,7 @@ TL;DR: github terms cheatsheet
 | Push |	Incorporate changes into the good draft | "You should see changes soon, I just pushed those commits" |
 | Pull | Incorporate good draft changes into another draft | "Yep I see them, I'll pull them now" |
 | Merge Conflict | Slightly more advanced incorporate good draft changes into my draft | "I had to resolve a merge conflict before I pushed those changes" |
-| Checkout | Go back to earlier draft | "I got lost in my changes so I checked out an old commit" |
+| Checkout | Go back to earlier draft/Move the location of HEAD | "I got lost in my changes so I checked out an old commit" |
 | Add |	Include / “pay attention to this” | "I forgot to add those files to the changes" |
 | Local |	The respository version on your computer | "I don't have that in my local copy" | 
 | Remote | The respository version on the network | "Those changes are on the remote copy" |
