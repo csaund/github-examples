@@ -102,7 +102,7 @@ andro_gbal <- andro %>%
   slice(1:10)
 
 
-## popular girl names
+## popular gal names
 name_pop <- ukb %>%
   filter(sex == "F", (year == 2014) | (year == 2015)) %>%
   spread(year, n, fill = 0) %>%
