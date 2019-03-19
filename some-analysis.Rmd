@@ -1,0 +1,118 @@
+---
+title: 'Data Skills: Set Exercises 04'
+output: html_document
+author: "Carolyn Saund"
+---
+
+```{r setup, include=FALSE}
+# this is a setup chunk: please do not alter it.
+knitr::opts_chunk$set(echo = TRUE, error = TRUE)
+library("tidyverse")
+library("babynames")
+```
+
+
+## `select()`
+```{r}
+select(babynames, year, sex, name)
+
+rename(babynames, proportion = prop)
+
+babygrouped <- babynames %>%
+  arrange(name) %>%
+  
+```
+
+
+
+## formative exercises
+
+```{r}
+## convert to a tibble
+ukb <- as_tibble(ukbabynames)
+
+```
+
+## easy mode
+```{r}
+num_observations <- nrow(ukb)
+
+## remove rank
+no_rank <- ukb %>%
+  select(-rank)
+
+
+```
+## Med mode
+```{r}
+ukb_prop <- ukb %>%
+  group_by(year, sex) %>%
+  mutate(p = n / sum(n)) %>%
+  ungroup()
+```
+
+
+```{r}
+ukb_filtered <- ukb %>%
+  filter(name=="Sophie"|name=="Lauren")
+```
+
+
+
+## Hard mode
+```{r}
+
+## Name endings
+last_letter <- ukb %>%
+  mutate(lastchar = substr(name, nchar(name), nchar(name))) %>%
+  filter(lastchar %in% letters) %>%
+  count(sex, lastchar) %>%
+  arrange(lastchar)
+
+ggplot(last_letter, aes(lastchar, nn, fill = sex)) +
+  geom_bar(stat = "identity")
+
+
+## name graphs
+top_names <- ukb %>%
+  filter(year == max(year), rank <= 5) %>%
+  select(sex, name)
+
+ukb %>%
+  inner_join(top_names, c("sex", "name")) %>%
+  ggplot(aes(year, n, color = name)) +
+    geom_line() +
+    facet_wrap(~sex)
+
+
+
+## androgeny
+andro <- ukb %>%
+  group_by(sex, name) %>%
+  summarise(tot = sum(n)) %>%
+  ungroup() %>%
+  spread(sex, tot, fill = 0) %>%
+  mutate(N = F + M)
+
+andro_gbal <- andro %>%
+  filter(N >= 5000) %>%
+  mutate(gbal = log(F + .5) - log(M + .5),
+         tot = F + M) %>%
+  arrange(abs(gbal)) %>%
+  slice(1:10)
+
+
+## popular girl names
+name_pop <- ukb %>%
+  filter(sex == "F", (year == 2014) | (year == 2015)) %>%
+  spread(year, n, fill = 0) %>%
+  filter(`2015` > 500 | `2014` > 500) %>%
+  mutate(chg = `2015` - `2014`)
+
+name_pop %>%
+  arrange(desc(chg)) %>%
+  slice(1) %>%
+  pull(name)
+```
+
+
