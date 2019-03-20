@@ -1,5 +1,5 @@
 ---
-title: 'Data Skills: Set Exercises 05'
+title: 'Data Skills: Set Exercises 06'
 output: html_document
 author: "Carolyn Saund"
 ---
